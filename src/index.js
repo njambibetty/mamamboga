@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// 
+import { render } from 'react-dom';
+import React, { Component, Fragment } from 'react';
+// import Hello from './Hello';
+import TopBar from './TopBar';
+import ProductList from './ProductList';
+import './style.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React'
+    };
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  render() {
+    return (
+      <Fragment>
+        <TopBar />
+        <div className="container">
+          <ProductList />
+        </div>
+      </Fragment>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
