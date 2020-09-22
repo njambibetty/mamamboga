@@ -5,13 +5,14 @@ import ProductAlerts from './ProductAlerts';
 import {products} from './products';
 
 
+
 const ProductList = ({ name }) => {
   const Buy = () => {
     window.alert('You have bought a product');
   }
 
   const onShow = () => {
-    window.alert('You got an offer--');
+    window.alert('You got an offer');
   }
 
   return (
